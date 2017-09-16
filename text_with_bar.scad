@@ -63,11 +63,11 @@ module ibar(width, length) {
 //translate([208, 30, 0]) ibar(10,15);
 
 
-translate([-70, 0, 0]) the_text_with_bar(text_on_flat3, 80, 55);
-the_text_with_bar(text_on_flat2, 60, 85);
-translate([28, 30, 0]) ibar(10,15);
+//translate([-70, 0, 0]) the_text_with_bar(text_on_flat3, 80, 55);
+//the_text_with_bar(text_on_flat2, 60, 85);
+//translate([28, 30, 0]) ibar(10,15);
 
-translate([0, 80, 0]) the_text_with_bar(text5, 60, 0);
+//translate([0, 80, 0]) the_text_with_bar(text5, 60, 0);
 
 translate([0, 160, 0]) {
 the_text_with_bar(text4, 60, 180);
