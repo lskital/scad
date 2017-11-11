@@ -67,7 +67,7 @@ translate([-140, 0, 0]) the_text_with_bar(text_on_flat3, 80, 25);
 the_text_with_bar(text_on_flat2, 60, 260);
 //translate([28, 30, 0]) ibar(10,15);
 
-translate([0, 80, 0]) the_text_with_bar(text5, 60, 0);
+//translate([0, 80, 0]) the_text_with_bar(text5, 60, 0);
 
 translate([0, 160, 0]) {
 the_text_with_bar(text4, 60, 250);
