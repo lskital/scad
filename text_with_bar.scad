@@ -1,10 +1,9 @@
-
 //font="Bitstream Vera Sans:style=Bold";
 //font="Titan One";
 font="Baskerville:style=Bold";
 text_on_flat="Sylwia & Lali";
-text_on_flat2="reneusz";
-text_on_flat3="I";
+text_on_flat2="ulia";
+text_on_flat3="J";
 text4="Klaudia";
 text5="&";
 
@@ -63,16 +62,16 @@ module ibar(width, length) {
 //translate([208, 30, 0]) ibar(10,15);
 
 
-translate([-140, 0, 0]) the_text_with_bar(text_on_flat3, 80, 25);
-the_text_with_bar(text_on_flat2, 60, 260);
+translate([-73, 0, 0]) the_text_with_bar(text_on_flat3, 80, 15);
+the_text_with_bar(text_on_flat2, 60, 124);
 //translate([28, 30, 0]) ibar(10,15);
 
 //translate([0, 80, 0]) the_text_with_bar(text5, 60, 0);
 
-translate([0, 160, 0]) {
-the_text_with_bar(text4, 60, 250);
-translate([83, 30, 0]) ibar(10,15);
-}
+//translate([0, 160, 0]) {
+//the_text_with_bar(text4, 60, 200);
+//translate([83, 30, 0]) ibar(10,15);
+//}
 
 //translate([0, -50, 0]) the_text_with_bar(text_on_flat2, 30, 110);
 //the_frame();
