@@ -73,6 +73,29 @@ module ziptie_base_90() {
     
 }
 
-translate([0, 0, -ziptie_base_height]) ziptie_base_90();
+module plank_mount_base(x, y, d) {
+  slider_width = 35;
+  wall_bottom = 5;
+  wall = 2.5;
+  
+  t_x = slider_width;
+  t_y = x + 2 * wall;
+  t_z = y + wall + wall_bottom;
+  
+  x_offset = 0.5 * (t_x - base_width);
+  translate([-x_offset, -t_y+base_depth, -t_z])
+  difference() {
+    cube([t_x, t_y, t_z]);
+    translate([0, wall, wall_bottom]) cube([t_x, x, y]);
+    translate([0.5 * t_x, 0.5 * t_y, 0]) cylinder(h=wall_bottom, d=d, $fn=20);
+  }
+  
+    
+}
+plank_x = 45;
+plank_y = 10;
+hole_dia = 4;
+translate() plank_mount_base(plank_x, plank_y, hole_dia);
+//translate([0, 0, -ziptie_base_height]) ziptie_base_90();
 hot_shoe();
 
