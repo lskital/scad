@@ -75,7 +75,7 @@ module ziptie_base_90() {
 
 module plank_mount_base(x, y, d) {
   slider_width = 35;
-  wall_bottom = 5;
+  wall_bottom = 3;
   wall = 2.5;
   
   t_x = slider_width;
@@ -93,8 +93,8 @@ module plank_mount_base(x, y, d) {
     
 }
 plank_x = 45;
-plank_y = 10;
-hole_dia = 4;
+plank_y = 14;
+hole_dia = 4.9;
 translate() plank_mount_base(plank_x, plank_y, hole_dia);
 //translate([0, 0, -ziptie_base_height]) ziptie_base_90();
 hot_shoe();
