@@ -16,7 +16,7 @@ lm_indent_width = 55;
 
 
 fp_y = 3;
-motor_offset_x = 37 - fp_y;
+motor_offset_x = 27 - fp_y;
 // 30mm from the base
 motor_offset_z =  30 - (0.5 * nema17_xy);
 
@@ -56,7 +56,12 @@ module lower_mount() {
     lower_mount_leg();
     translate([lm_hole_distance, 0, 0]) lower_mount_leg();
     translate([lm_x, 0, 0]) cube([lm_indent_width, lm_y, lm_z]);
-    translate([0, lm_y, 0]) cube([lm_total_width, lm_base_y, lm_z]);
+    
+    //small support plate for motor only
+    translate([0, lm_y, 0]) cube([motor_offset_x, lm_base_y, lm_z]);
+    
+    //full size support plate (for future work)
+    //translate([0, lm_y, 0]) cube([lm_total_width, lm_base_y, lm_z]);
 }
 module face_plate(x, y, z) {
     cube([x, y, z]);
