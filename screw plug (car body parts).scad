@@ -8,7 +8,7 @@ neck_straight_h = 4.70;
 neck_taper_h = 5;
 neck_taper_dia = 11.75;
 
-neck_flex_cut_dia = neck_dia-2;
+neck_flex_cut_dia = neck_dia-4;
 screw_hole_dia = 3.9;
 
 top_taper_h = 2;
@@ -60,10 +60,11 @@ cube([cut_width, head_dia, total_neck_length], center=true);
 cube([head_dia, cut_width, total_neck_length], center=true);
 }
 translate([0, 0, -0.5*head_h]) cylinder(d=screw_hole_dia, h=head_h+neck_straight_h);
-translate([0, 0, 0.5*head_h]) cylinder(d=neck_flex_cut_dia, h=neck_straight_h);
+translate([0, 0, 0.5*head_h]) 
+  cylinder(d1=neck_flex_cut_dia, d2=2*cut_width, h=neck_straight_h);
 translate([0, 0, -0.5*head_h]) screw_countersunk();
 
 }
 
 //support
-translate([0, 0, 0.5*head_h+neck_straight_h]) cylinder(h=0.3, d=neck_dia);
+//translate([0, 0, 0.5*head_h+neck_straight_h]) cylinder(h=0.3, d=neck_dia);
