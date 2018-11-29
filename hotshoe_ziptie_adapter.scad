@@ -92,7 +92,7 @@ module plank_mount_base(x, y, d) {
   
     
 }
-plank_x = 45;
+plank_x = 46;
 plank_y = 14;
 hole_dia = 4.9;
 translate() plank_mount_base(plank_x, plank_y, hole_dia);
