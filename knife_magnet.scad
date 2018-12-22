@@ -1,9 +1,11 @@
+magnets=2;
+
 magnet_d = 10;
 magnet_h = 3.2;
 
 height = 12;
 width = magnet_d + 2;
-length = magnet_d * 4;
+length = (magnet_d * (magnets+3));
 
 $fn = 40;
 
@@ -38,7 +40,9 @@ module magnet() {
 }
 difference() {
   base();
-  translate([0.5*(length-width), 0, 0]) magnet();
+  //translate([0.5*(length-width), 0, 0]) magnet();
+  translate([0.33*(length-width), 0, 0]) magnet();
+  translate([0.66*(length-width), 0, 0]) magnet();
   screw_countersunk();
   translate([length - width, 0, 0]) screw_countersunk();
 }
