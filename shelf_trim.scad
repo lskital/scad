@@ -1,7 +1,7 @@
 //shelf trim
 
 
-l = 262;
+l = 246;
 h = 20;
 d = 1;
 overlap_h = 0.45;
