@@ -1,5 +1,6 @@
+$fn = 20;
 od = 10;
-id = 5;
+id = 7;
 
 taper_h = 5;
 taper_d = id + 1;
