@@ -1,11 +1,11 @@
 dia1=27;
 dia2=dia1+5;
-dia3=dia1-2;
-h1=1;
+dia3=dia1-3;
+h1=2;
 h2=7;
 
-cable_hole_x=11;
-cable_hole_y=5.5;
+cable_hole_x=8;
+cable_hole_y=5;
 
 
 module cable_hole() {
