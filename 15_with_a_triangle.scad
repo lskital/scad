@@ -5,7 +5,7 @@ font="Bitstream Vera Sans:style=Bold";
 text_on_flat="15";
 //text_on_flat2="Kingi";
 text_size=80;
-depth=3;
+depth=5;
 spacing=1;
 
 frame_z_offset = 0.5*text_size;
@@ -49,7 +49,7 @@ linear_extrude(height=depth, convexity=4)
 }
 
 module ibar(width, length) {
-  cube([width, length, 0.33*depth]);
+  cube([width, length, 1]);
 }
 
 
