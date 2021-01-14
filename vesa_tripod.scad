@@ -1,8 +1,8 @@
 // Vesa 100mm to 75mm adapter
 
 
-plate_edge = 140;
-plate_height = 10;
+plate_edge = 120;
+plate_height = 5;
 vesa_a = 100;
 vesa_b = 75;
 
@@ -77,9 +77,10 @@ x = plate_edge;
 translate([-0.5*x-plate_height, -0.5*x ,-x-0.5*plate_height])
 bottom_plate();
 
+offset = 0.25*75;
 
-translate([-0.5*x, 0.5*x-plate_height, -0.5*plate_height]) rotate([-90, 0, 0]) 
+translate([-0.5*x, -offset-plate_height, -0.5*plate_height]) rotate([-90, 0, 0]) 
   linear_extrude(plate_height) polygon([[0,0],[0,x],[x,0]]);
 
-translate([-0.5*x, -0.5*x, -0.5*plate_height]) rotate([-90, 0, 0]) 
+translate([-0.5*x, offset, -0.5*plate_height]) rotate([-90, 0, 0]) 
   linear_extrude(plate_height) polygon([[0,0],[0,x],[x,0]]);

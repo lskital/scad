@@ -125,11 +125,11 @@ module appliances() {
      translate([0.5*main_w, 0, 2*single_wall+shelf_h2+10]) receiver();
 }
 main();
-//panel_set3();
+panel_set3();
 tv_stand(1000, 100);
 shelf(shelf_h);
 shelf(shelf_h2);
-//appliances();
+appliances();
 mid = shelf_h - 220 - single_wall;
 echo ("mid", mid);
 echo("Height: ", total_h);
