@@ -98,8 +98,8 @@ module shelf(h) {
          cube([2*single_wall, stand_depth, stand_h]);
          translate([middle_width+2*single_wall, 0, 0]) 
            cube([2*single_wall, stand_depth, stand_h]);
-           translate([-100, -single_wall, total_h])
-             cube([middle_width+4*single_wall+200, single_wall, h]);
+           translate([-100, -2*single_wall, total_h])
+             cube([middle_width+4*single_wall+200, 2*single_wall, h]);
      }
 
  }
@@ -121,7 +121,7 @@ module receiver() {
 }
 
 module appliances() { 
-     translate([0.5*(main_w-1683), 0.66*depth - single_wall - 60 - tv_mount_offset, main_h+50]) tv();
+     translate([0.5*(main_w-1683), 0.66*depth - 2*single_wall - 60 - tv_mount_offset, main_h+50]) tv();
      translate([0.5*main_w, 0, 3*single_wall+shelf_h+10]) speaker();
      translate([0.5*main_w, 0, 3*single_wall+shelf_h2+10]) receiver();
 }
