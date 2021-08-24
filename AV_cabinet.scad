@@ -2,25 +2,25 @@
 top_u = 0;
 bottom_u = 12;
 
-middle_width = 700;
-u_width = 470;
-u = 44.45;
+middle_width = 600;
+u_width = 490;
+u = 45;
 
-depth = 520;
+depth = 570;
 
 top_cabinet_h = top_u * u;
 bottom_cabinet_h = bottom_u * u;
-single_wall = 18;
+single_wall = 15;
 
-shelf_h = bottom_cabinet_h-single_wall-200;
-shelf_h2 = 80;
+shelf_h = bottom_cabinet_h-2*single_wall-200;
+shelf_h2 = 60;
 
 leg_h = 50;
 
 
 
 top_h = 2 * single_wall;
-bottom_h = single_wall;
+bottom_h = 2*single_wall;
 
 panel_d = 18;
 panel_h = 25;
@@ -31,6 +31,7 @@ main_h = bottom_h + bottom_cabinet_h + 0*single_wall + top_cabinet_h + top_h;
 main_w = 6*single_wall + middle_width + 2*u_width + 2*single_wall;
 total_h = main_h + leg_h;
 
+tv_mount_offset = 110;
 module rack(num, width=u_width){
     cube([width, depth, num*u]);
 }
@@ -65,7 +66,7 @@ module main() {
 
 module shelf(h) {
     translate([4*single_wall+u_width, 0, single_wall+h])
-    cube([middle_width, depth, single_wall]);
+    cube([middle_width, depth, 2*single_wall]);
 }
 
  
@@ -97,8 +98,8 @@ module shelf(h) {
          cube([2*single_wall, stand_depth, stand_h]);
          translate([middle_width+2*single_wall, 0, 0]) 
            cube([2*single_wall, stand_depth, stand_h]);
-           translate([-100, -single_wall, total_h])
-             cube([middle_width+4*single_wall+200, single_wall, h]);
+           translate([-100, -2*single_wall, total_h])
+             cube([middle_width+4*single_wall+200, 2*single_wall, h]);
      }
 
  }
@@ -120,9 +121,9 @@ module receiver() {
 }
 
 module appliances() { 
-     translate([0.5*(main_w-1683), 0.66*depth - 120, main_h+50]) tv();
-     translate([0.5*main_w, 0, 2*single_wall+shelf_h+10]) speaker();
-     translate([0.5*main_w, 0, 2*single_wall+shelf_h2+10]) receiver();
+     translate([0.5*(main_w-1683), 0.66*depth - 2*single_wall - 60 - tv_mount_offset, main_h+50]) tv();
+     translate([0.5*main_w, 0, 3*single_wall+shelf_h+10]) speaker();
+     translate([0.5*main_w, 0, 3*single_wall+shelf_h2+10]) receiver();
 }
 main();
 panel_set3();
