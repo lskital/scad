@@ -2,14 +2,14 @@ $fn=32;
 plate_x = 18 + 2*15;
 plate_y = 34 + 10;
 plate_z = 2;
-cylinder_h = 8;
+cylinder_h = 9;
  
   
-module eurocylinder(h=1, scale=1) {
+module eurocylinder(h=100, scale=1) {
   x1 = 18*scale;
   r = 3*scale;
   x2 = 11*scale;
-  y2 = (34 - 0.5*18 - r)*scale;
+  y2 = (34 - 0.5*18 - r)*(1+(scale-1)*0.5);
   
   
   cylinder(d=x1, h=h, center=true);
@@ -41,7 +41,13 @@ module screw_countersunk(
 }
 
 module plate() {
-  cube([plate_x, plate_y, plate_z], center=true);
+  translate([0,8,0]) {
+    difference() {
+      cube([plate_x, plate_y, plate_z], center=true);
+      translate([0.5*plate_x-6, 0, 2+0.5*plate_z])rotate([180,0,0]) screw_countersunk();
+      translate([-(0.5*plate_x-6), 0, 2+0.5*plate_z])rotate([180,0,0]) screw_countersunk();
+    }
+  }
   translate([0,0,0.5*(cylinder_h-plate_z)]) eurocylinder(scale=1.3, h=cylinder_h);
 }
 
