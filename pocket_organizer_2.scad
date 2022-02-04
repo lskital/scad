@@ -1,9 +1,15 @@
 // Pocket organizer
 
+// Slot configuration:
+// cylinder: [0, [diameter, height]]
+// cube:     [1, [x, y, z]
+wallet = [1,[73, 11.5, 55]];
+slots = [[1,[37, 11, 55]],[0, [21.5, 35]]];
+back_slots = [];
 
-slots = [[0, [24, 10]], [1, [22, 11, 40]], [0, [19, 13.5, 45]], [1, [17.5, 10.5, 20]]];
-back_slots = [[1, [60, 4, 70]]];
+//joiner height
 h = 15;
+
 wall = 1;
 extra_space = 2;
 base = 1;
