@@ -54,7 +54,7 @@ module handle_2() {
 }
 
 //key();
-handle_1();
-rotate([0, 180, 0]) translate([0, 0, 10]) 
+//handle_1();
+//rotate([0, 180, 0]) translate([0, 0, 10]) 
 handle_2();
 

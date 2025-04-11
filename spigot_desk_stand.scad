@@ -25,6 +25,8 @@ ziptie_base_height = wall_width+ziptie_slot_height;
 base_width = wall_width*2+hs_width;
 base_depth = hs_depth+wall_width;
 
+
+
 module hot_shoe() {
     //base cube
     difference() {
@@ -101,7 +103,22 @@ module X_stand() {
     h = 5;
     translate([-0.5*(lx-wy), 0, -h]) cube([lx, wx, h]);
     translate([0, -0.5*(ly-wx), -h]) cube([wy, ly, h]);
+    
+    translate([0.5*(5+wx), 23, 0]) rotate([0, -90, 0])
+      linear_extrude(height=5) polygon([[0,0],[0,0.5*(lx-wx)],[15, 0]]);
+    
+    rotate([0, 0, 90]) translate([0.5*(5+wx), 0, 0]) rotate([0, -90, 0])
+      linear_extrude(height=5) polygon([[0,0],[0,0.5*(lx-wx)],[15, 0]]);
+    
+    rotate([0, 0, -90]) translate([0.5*(5-wx), 23, 0]) rotate([0, -90, 0])
+      linear_extrude(height=5) polygon([[0,0],[0,0.5*(lx-wx)],[15, 0]]);
+    
+    rotate([0, 0, 180]) translate([0.5*(5-wx), 0, 0]) rotate([0, -90, 0])
+      linear_extrude(height=5) polygon([[0,0],[0,0.5*(lx-wx)],[15, 0]]);
 }
+
+
+
 
 module spigot() {
   d1 = 16;
@@ -124,10 +141,17 @@ module spigot_stand() {
   translate([0.5*23, 0.5*23, 0]) spigot();
 }
 
+
+
+
+
+
 difference() {
 spigot_stand();
 translate([0.5*23, 0.5*23, -25]) cylinder(h=100, d=4);
 }
+
+
 //plank_x = 46;
 //plank_y = 14;
 //hole_dia = 4.9;
