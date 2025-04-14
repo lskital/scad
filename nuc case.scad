@@ -5,17 +5,17 @@ base_z = 2;
 hole_dia = 3;
 
 hole_dist_x = 95;
-hole_dist_y = 90;
+hole_dist_y = 91;
 
 stand_h = 15;
 stand_dia = 6;
 
 vent_dia = 40;
-vent_x = 45;
+vent_x = 55;
 vent_y = 27;
 
 sidewall_x = 3;
-sidewall_h = base_z+5;
+sidewall_h = base_z+8;
 sidewall_hole_h = base_z+0.5*(sidewall_h-base_z);
 sidewall_hole_d = 15;
 
