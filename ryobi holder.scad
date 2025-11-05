@@ -1,15 +1,12 @@
 // Ryobi up-side-down holder for tools and batteries
 
-
-
-
 slot_height = 82;  // height of the battery + tool's base with some margin
-depth = 135;  // total depth of the mount
+depth = 100;  // total depth of the mount
 
 slot_width = 83;
 
-cut_out_width = 50;
-cut_out_depth = 92;
+cut_out_width = 30;
+cut_out_depth = 90;
 
 side_walls_width = 3;
 
@@ -17,6 +14,7 @@ top_width = 5;
 
 bottom_width = 3;
 
+side_wall_rem = 5;
 
 //------
 
@@ -62,5 +60,16 @@ module screw_countersunk(
     }
 }
 
+module cut_out() {
+  //cube([slot_width*2, depth-2*side_wall_rem, slot_height]);
+  translate([0, 0.5*slot_width, 0.5*slot_height])
+    rotate([0, 90, 0]) cylinder(d=slot_height, h=slot_width*2);
+}
+difference() {
 cage();
+translate([-0.5*slot_width, side_wall_rem, side_walls_width]) cut_out();
+  cd=60;
+  translate([0.5*slot_width+side_walls_width, depth-0.5*cd-5, 0.5*slot_height])
+    cylinder(d=cd, h=slot_height);
+}
 //translate([screw_x_offset, cut_out_depth, screw_z_offset]) screw_countersunk();
